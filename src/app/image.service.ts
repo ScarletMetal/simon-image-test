@@ -10,7 +10,7 @@ export class ImageService {
 
   constructor() {}
 
-  setURL(image) {
+  setImage(image) {
     this.image.next(image);
   }
 
