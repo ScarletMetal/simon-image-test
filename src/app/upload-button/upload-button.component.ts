@@ -25,7 +25,8 @@ export class UploadButtonComponent implements OnInit {
       const reader = new FileReader();
       const file = event.target.files[0];
       reader.onload = (readingEvent: any) => {
-        this.imageService.setURL(readingEvent.target.result);
+        this.imageService.setImage(readingEvent.target.result);
+        this.imageService.setName(file.name);
       };
 
       reader.readAsDataURL(file);
