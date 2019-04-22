@@ -28,7 +28,11 @@ export class UploadButtonComponent implements OnInit {
       width: this.dialogWidth
     });
 
-    dialogRef.afterClosed().subscribe(result => this.imageService.setImage(result));
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.imageService.setImage(result)
+      }
+    });
   }
 
 }
