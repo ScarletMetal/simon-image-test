@@ -6,6 +6,9 @@ import {Image} from "./image";
   providedIn: "root"
 })
 export class ImageService {
+  /**
+   * This service holds the data for the uploaded image
+   */
   image = new Subject<Image>();
 
   constructor() {}
