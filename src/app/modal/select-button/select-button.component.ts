@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core"
 import {Image} from "../../image";
 
 const ImageFileTypes = [
-  "jpg", "jpeg", "png"
+  "jpg", "jpeg", "png", "gif"
 ];
 
 @Component({
