@@ -5,10 +5,10 @@ import {Image} from "../image";
 
 @Component({
   selector: "app-upload-button",
-  templateUrl: "./upload-button.component.html",
-  styleUrls: ["./upload-button.component.css"]
+  templateUrl: "./select-button.component.html",
+  styleUrls: ["./select-button.component.css"]
 })
-export class UploadButtonComponent implements OnInit {
+export class SelectButtonComponent implements OnInit {
 
   constructor(private imageService: ImageService) {
   }

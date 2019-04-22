@@ -3,22 +3,22 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { UploadButtonComponent } from "./upload-button/upload-button.component";
+import { SelectButtonComponent } from "./select-button/select-button.component";
 import { DisplayImageComponent } from "./display-image/display-image.component";
 
-import {MatButtonModule, MatButtonToggleModule} from "@angular/material";
+import {MatButtonModule, MatDialogModule} from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadButtonComponent,
+    SelectButtonComponent,
     DisplayImageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatButtonToggleModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
