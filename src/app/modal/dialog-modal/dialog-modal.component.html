@@ -9,15 +9,13 @@
     </mat-form-field>
 
     <p>Select The Image</p>
-    <app-select-button (imageEvent)="receiveImage($event)"
-                       (validationEvent)="receiveValidation($event)"
-                       (errorEvent)="receiveError($event)"></app-select-button>
+    <app-select-button (imageEvent)="receiveImage($event)"></app-select-button>
     <p>{{fileName}}</p>
     <p *ngIf="error" id="error-message">Invalid File Type</p>
   </div>
 
   <div mat-dialog-actions>
     <button mat-button (click)="onClose()">Cancel</button>
-    <button mat-button [mat-dialog-close]="result" [disabled]="!isValid" cdkFocusInitial>Save</button>
+    <button mat-button [mat-dialog-close]="result" [disabled]="!canSave()" cdkFocusInitial>Save</button>
   </div>
 </div>

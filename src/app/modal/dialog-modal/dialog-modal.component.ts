@@ -42,16 +42,7 @@ export class DialogModalComponent implements OnInit {
     }
   }
 
-  receiveValidation($event) {
-    if (this.result.name === "") {
-      this.isValid = false;
-    } else {
-      this.isValid = $event;
-    }
-  }
-
-  receiveError($event) {
-    console.log("error is", $event);
-    this.error = $event;
+  canSave() {
+    return this.isValid && (this.result.content !== "") && (this.result.name !== "");
   }
 }
