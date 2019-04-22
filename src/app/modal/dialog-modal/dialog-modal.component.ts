@@ -38,6 +38,8 @@ export class DialogModalComponent implements OnInit {
       this.error = false;
     } else {
       this.fileName = "";
+      this.result.content = "";
+      this.result.name = "";
       this.isValid = false;
       this.error = true;
     }
