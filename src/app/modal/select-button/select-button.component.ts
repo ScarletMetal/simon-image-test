@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core"
 import {Image} from "../../image";
 
 const ImageFileTypes = [
-  "jpg", "jpeg", "png"
+  "jpg", "jpeg", "png", "gif"
 ];
 
 @Component({
@@ -28,7 +28,8 @@ export class SelectButtonComponent implements OnInit {
   validateFileName(name: string) {
     const items = name.split(".");
     const extension = items[items.length - 1];
-    return extension in ImageFileTypes;
+    console.log(extension);
+    return ImageFileTypes.indexOf(extension) !== -1;
   }
 
   onFileSelected(event: any) {
