@@ -8,6 +8,9 @@ import {Image} from "../image";
   styleUrls: ["./display-image.component.css"]
 })
 export class DisplayImageComponent implements OnInit {
+  /**
+   * This Components an {Image} object and displays it's name and content
+   */
   private image: Image = {content: "", name: ""};
 
   constructor(private imageService: ImageService) {
