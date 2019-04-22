@@ -10,6 +10,10 @@ import {ImageService} from "../image.service";
 })
 export class UploadButtonComponent implements OnInit {
 
+  /**
+   * This button toggles a {DialogModalComponent} and saves the resulting image to an {ImageService}
+   */
+
   dialogWidth = "70vw";
 
   constructor(private dialog: MatDialog, private imageService: ImageService) {
