@@ -4,16 +4,15 @@
     <p>Enter The Image Name</p>
     <mat-form-field>
       <label>
-        <input matInput [(ngModel)]="name">
+        <input matInput [(ngModel)]="result.name">
       </label>
     </mat-form-field>
 
-    <p>Select The Image</p> <app-select-button></app-select-button>
-    {{image}}
+    <p>Select The Image</p> <app-select-button (imageEvent)="receiveImage($event)"></app-select-button>
   </div>
 
   <div mat-dialog-actions>
-    <button mat-button>Cancel</button>
-    <button mat-button [mat-dialog-close]="result"></button>
+    <button mat-button (click)="onClose()">Cancel</button>
+    <button mat-button [mat-dialog-close]="result" cdkFocusInitial>Save</button>
   </div>
 </div>
