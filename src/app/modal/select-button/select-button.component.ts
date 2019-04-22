@@ -7,7 +7,9 @@ import {Image} from "../../image";
   styleUrls: ["./select-button.component.css"]
 })
 export class SelectButtonComponent implements OnInit {
-
+  /**
+   * This value allows the user to pick an image file from the file system and outputs an {Image} object to an {EventEmitter}
+   */
   constructor() {
   }
 
