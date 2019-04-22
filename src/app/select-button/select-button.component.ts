@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core"
 import {Image} from "../image";
 
 @Component({
-  selector: "app-upload-button",
+  selector: "app-select-button",
   templateUrl: "./select-button.component.html",
   styleUrls: ["./select-button.component.css"]
 })
