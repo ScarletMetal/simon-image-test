@@ -8,6 +8,11 @@ import {Image} from "../../image";
   styleUrls: ["./dialog-modal.component.css"]
 })
 export class DialogModalComponent implements OnInit {
+  /**
+   * This is the dialog which is responsible for generating an {Image} object from a selected file and a given name
+   *
+   * the resulting output of the modal is an {Image} object
+   */
   result: Image = {content: "", name: ""};
   fileName = "";
   constructor(public dialogRef: MatDialogRef<DialogModalComponent>) { }
