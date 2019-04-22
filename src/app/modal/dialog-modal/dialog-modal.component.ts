@@ -35,6 +35,7 @@ export class DialogModalComponent implements OnInit {
       this.fileName = $event.name;
       this.result.content = $event.content;
       this.isValid = true;
+      this.error = false;
     } else {
       this.fileName = "";
       this.isValid = false;
