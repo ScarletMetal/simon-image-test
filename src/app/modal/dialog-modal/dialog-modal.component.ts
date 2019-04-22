@@ -8,7 +8,6 @@ import {Image} from "../../image";
   styleUrls: ["./dialog-modal.component.css"]
 })
 export class DialogModalComponent implements OnInit {
-  name = "";
   result: Image = {content: "", name: ""};
 
   constructor(public dialogRef: MatDialogRef<DialogModalComponent>) { }
@@ -17,13 +16,12 @@ export class DialogModalComponent implements OnInit {
   }
 
   onClose() {
+    console.log("clicked close");
     this.dialogRef.close();
   }
 
   receiveImage($event) {
-    this.result = {
-      content: $event.content,
-      name: this.name
-    };
+    console.log("event is", $event);
+    this.result.content = $event.content;
   }
 }
