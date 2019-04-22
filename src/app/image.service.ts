@@ -1,20 +1,16 @@
 import {Injectable} from "@angular/core";
 import {Observable, of, Subject} from "rxjs";
+import {Image} from "./image";
 
 @Injectable({
   providedIn: "root"
 })
 export class ImageService {
-  image = new Subject<string>();
-  name = new Subject<string>();
+  image = new Subject<Image>();
 
   constructor() {}
 
   setImage(image) {
     this.image.next(image);
-  }
-
-  setName(name) {
-    this.name.next(name);
   }
 }
