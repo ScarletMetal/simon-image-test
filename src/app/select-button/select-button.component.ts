@@ -13,7 +13,7 @@ export class SelectButtonComponent implements OnInit {
 
   @ViewChild("file") file;
 
-  @Output() imageEmitter = new EventEmitter<Image>();
+  @Output() imageEvent = new EventEmitter<Image>();
 
   click() {
     this.file.nativeElement.click();
@@ -25,7 +25,7 @@ export class SelectButtonComponent implements OnInit {
       const file = event.target.files[0];
       reader.onload = (readingEvent: any) => {
         const img: Image = {content: readingEvent.target.result, name: file.name};
-        this.imageEmitter.emit(img);
+        this.imageEvent.emit(img);
       };
 
       reader.readAsDataURL(file);
