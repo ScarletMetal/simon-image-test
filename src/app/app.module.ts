@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import { UploadButtonComponent } from "./upload-button/upload-button.component";
 import { DisplayImageComponent } from "./display-image/display-image.component";
 
-import {MatButtonModule} from "@angular/material";
+import {MatButtonModule, MatButtonToggleModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import {MatButtonModule} from "@angular/material";
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
