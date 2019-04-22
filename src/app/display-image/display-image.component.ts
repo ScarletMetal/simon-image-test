@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ImageService} from "../image.service";
+import {Image} from "../image";
 
 @Component({
   selector: "app-display-image",
@@ -7,8 +8,7 @@ import {ImageService} from "../image.service";
   styleUrls: ["./display-image.component.css"]
 })
 export class DisplayImageComponent implements OnInit {
-  private image = "";
-  private name = "";
+  private image: Image = {content: "", name: ""};
 
   constructor(private imageService: ImageService) {
   }
@@ -16,9 +16,6 @@ export class DisplayImageComponent implements OnInit {
   ngOnInit() {
     this.imageService.image.subscribe(image => {
       this.image = image;
-    });
-    this.imageService.name.subscribe(name => {
-      this.name = name;
     });
   }
 
