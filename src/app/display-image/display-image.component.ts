@@ -8,13 +8,17 @@ import {ImageService} from "../image.service";
 })
 export class DisplayImageComponent implements OnInit {
   private image = "";
+  private name = "";
 
   constructor(private imageService: ImageService) {
   }
 
   ngOnInit() {
-    this.imageService.image.subscribe(url => {
-      this.image = url;
+    this.imageService.image.subscribe(image => {
+      this.image = image;
+    });
+    this.imageService.name.subscribe(name => {
+      this.name = name;
     });
   }
 
