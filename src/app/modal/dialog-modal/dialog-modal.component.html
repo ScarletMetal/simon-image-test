@@ -8,8 +8,10 @@
       </label>
     </mat-form-field>
 
-    <p>Select The Image</p> <app-select-button (imageEvent)="receiveImage($event)"></app-select-button>
+    <p>Select The Image</p>
+    <app-select-button (imageEvent)="receiveImage($event)" (errorEvent)="receiveError($event)"></app-select-button>
     <p>{{fileName}}</p>
+    <p>{{error}}</p>
   </div>
 
   <div mat-dialog-actions>
