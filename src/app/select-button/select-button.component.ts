@@ -13,11 +13,11 @@ export class SelectButtonComponent implements OnInit {
 
   @ViewChild("file") file;
 
+  @Output() imageEmitter = new EventEmitter<Image>();
+
   click() {
     this.file.nativeElement.click();
   }
-
-  @Output() imageEmitter = new EventEmitter<Image>();
 
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
