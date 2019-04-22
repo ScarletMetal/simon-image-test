@@ -132,5 +132,12 @@
       }
     }
   },
-  "defaultProject": "simon-test"
+  "defaultProject": "simon-test",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }
