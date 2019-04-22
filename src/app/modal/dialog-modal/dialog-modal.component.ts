@@ -9,7 +9,7 @@ import {Image} from "../../image";
 })
 export class DialogModalComponent implements OnInit {
   result: Image = {content: "", name: ""};
-
+  fileName = "";
   constructor(public dialogRef: MatDialogRef<DialogModalComponent>) { }
 
   ngOnInit() {
@@ -22,6 +22,7 @@ export class DialogModalComponent implements OnInit {
 
   receiveImage($event) {
     console.log("event is", $event);
+    this.fileName = $event.name;
     this.result.content = $event.content;
   }
 }
