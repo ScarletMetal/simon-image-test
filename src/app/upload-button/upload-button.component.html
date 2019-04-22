@@ -1,7 +1,8 @@
 <div>
-  <button mat-button (click)="click()">Click Me</button> <br/>
+  <button mat-button (click)="click()">Select An Image</button> <br/>
   <img [src]="url">
 
-  <input #file accept=".git, .jpg, .jpeg, .png" type="file" style="display: none" (change)="onFileSelected($event)"/>
+  <!-- The file select dialog, only image files are enabled -->
+  <input #file accept=".gif, .jpg, .jpeg, .png" type="file" style="display: none" (change)="onFileSelected($event)"/>
 
 </div>
