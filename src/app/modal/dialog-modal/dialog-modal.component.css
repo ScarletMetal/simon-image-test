@@ -7,3 +7,7 @@
   flex-shrink: inherit;
   padding: 12px 0 0 !important;
 }
+
+#error-message {
+  color: red;
+}

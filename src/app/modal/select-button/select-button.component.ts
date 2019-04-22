@@ -21,6 +21,7 @@ export class SelectButtonComponent implements OnInit {
 
   @Output() imageEvent = new EventEmitter<Image>();
   @Output() validationEvent = new EventEmitter<boolean>();
+  @Output() errorEvent = new EventEmitter<string>();
   click() {
     this.file.nativeElement.click();
   }
@@ -28,7 +29,6 @@ export class SelectButtonComponent implements OnInit {
   validateFileName(name: string) {
     const items = name.split(".");
     const extension = items[items.length - 1];
-    console.log(extension);
     return ImageFileTypes.indexOf(extension) !== -1;
   }
 
@@ -37,12 +37,15 @@ export class SelectButtonComponent implements OnInit {
       const reader = new FileReader();
       const file = event.target.files[0];
       const isValid = this.validateFileName(file.name);
-      this.validationEvent.emit(isValid);
       if (isValid) {
+        console.log("valid");
         reader.onload = (readingEvent: any) => {
           const img: Image = {content: readingEvent.target.result, name: file.name};
           this.imageEvent.emit(img);
         };
+        reader.readAsDataURL(file);
+      } else {
+        this.imageEvent.emit();
       }
     }
   }

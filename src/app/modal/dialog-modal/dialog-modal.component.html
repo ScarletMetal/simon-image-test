@@ -9,8 +9,11 @@
     </mat-form-field>
 
     <p>Select The Image</p>
-    <app-select-button (imageEvent)="receiveImage($event)" (validationEvent)="receiveValidation($event)"></app-select-button>
+    <app-select-button (imageEvent)="receiveImage($event)"
+                       (validationEvent)="receiveValidation($event)"
+                       (errorEvent)="receiveError($event)"></app-select-button>
     <p>{{fileName}}</p>
+    <p *ngIf="error" id="error-message">Invalid File Type</p>
   </div>
 
   <div mat-dialog-actions>

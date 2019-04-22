@@ -16,6 +16,7 @@ export class DialogModalComponent implements OnInit {
   result: Image = {content: "", name: ""};
   fileName = "";
   isValid = false;
+  error = false;
 
   constructor(public dialogRef: MatDialogRef<DialogModalComponent>) {
   }
@@ -29,9 +30,16 @@ export class DialogModalComponent implements OnInit {
   }
 
   receiveImage($event) {
-    console.log("event is", $event);
-    this.fileName = $event.name;
-    this.result.content = $event.content;
+    if ($event) {
+      console.log("event is", $event);
+      this.fileName = $event.name;
+      this.result.content = $event.content;
+      this.isValid = true;
+    } else {
+      this.fileName = "";
+      this.isValid = false;
+      this.error = true;
+    }
   }
 
   receiveValidation($event) {
@@ -40,5 +48,10 @@ export class DialogModalComponent implements OnInit {
     } else {
       this.isValid = $event;
     }
+  }
+
+  receiveError($event) {
+    console.log("error is", $event);
+    this.error = $event;
   }
 }
