@@ -29,8 +29,8 @@ export class UploadButtonComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.imageService.setImage(result)
+      if (result && result.content !== "") {
+        this.imageService.setImage(result);
       }
     });
   }
