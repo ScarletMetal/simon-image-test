@@ -7,14 +7,14 @@ import {ImageService} from "../image.service";
   styleUrls: ["./display-image.component.css"]
 })
 export class DisplayImageComponent implements OnInit {
-  private url = "";
+  private image = "";
 
   constructor(private imageService: ImageService) {
   }
 
   ngOnInit() {
-    this.imageService.url.subscribe(url => {
-      this.url = url;
+    this.imageService.image.subscribe(url => {
+      this.image = url;
     });
   }
 

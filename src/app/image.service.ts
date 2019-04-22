@@ -1,15 +1,17 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Observable, of, Subject} from "rxjs";
+
 @Injectable({
   providedIn: "root"
 })
 export class ImageService {
-  url = new Subject<string>() ;
+  image = new Subject<string>();
   name = new Subject<string>();
-  constructor() { }
 
-  setURL(url) {
-    this.url.next(url);
+  constructor() {}
+
+  setURL(image) {
+    this.image.next(image);
   }
 
   setName(name) {
