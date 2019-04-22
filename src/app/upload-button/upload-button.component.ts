@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {MatDialog} from "@angular/material";
-import {DialogModalComponent} from "../dialog-modal/dialog-modal.component";
-import {ImageService} from "../../image.service";
+import {DialogModalComponent} from "../modal/dialog-modal/dialog-modal.component";
+import {ImageService} from "../image.service";
 
 @Component({
   selector: "app-upload-button",

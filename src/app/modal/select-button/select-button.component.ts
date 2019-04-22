@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core";
-import {Image} from "../image";
+import {Image} from "../../image";
 
 @Component({
   selector: "app-select-button",
