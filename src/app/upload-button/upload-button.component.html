@@ -1,0 +1,7 @@
+<div>
+  <button mat-button (click)="click()">Click Me</button> <br/>
+  <img [src]="url">
+
+  <input #file accept=".git, .jpg, .jpeg, .png" type="file" style="display: none" (change)="onFileSelected($event)"/>
+
+</div>
