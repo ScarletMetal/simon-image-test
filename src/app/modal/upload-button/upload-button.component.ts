@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {MatDialog} from "@angular/material";
 import {DialogModalComponent} from "../dialog-modal/dialog-modal.component";
 import {ImageService} from "../../image.service";
@@ -10,7 +10,10 @@ import {ImageService} from "../../image.service";
 })
 export class UploadButtonComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private imageService: ImageService) { }
+  dialogWidth = "70vw";
+
+  constructor(private dialog: MatDialog, private imageService: ImageService) {
+  }
 
   ngOnInit() {
   }
@@ -18,7 +21,7 @@ export class UploadButtonComponent implements OnInit {
   openDialog() {
     console.log("opening");
     const dialogRef = this.dialog.open(DialogModalComponent, {
-      width: "40vw"
+      width: this.dialogWidth
     });
 
     dialogRef.afterClosed().subscribe(result => this.imageService.setImage(result));
